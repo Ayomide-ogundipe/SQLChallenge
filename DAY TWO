@@ -1,0 +1,9 @@
+SELECT wc.player_name, MAX(goals_scored) AS goals, MAX(assists_provided) AS assists
+FROM wc_players AS wc
+WHERE wc.* IS NOT NULL 
+AND wc.goals_scored != 'N.A'
+AND wc.assists_provided != 'N.A'
+AND wc.goals_scored != 'N,A'
+AND wc.assists_provided != 'N,A'
+GROUP BY player_name
+ORDER BY goals DESC
