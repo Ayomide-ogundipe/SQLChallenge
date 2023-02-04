@@ -1,0 +1,2 @@
+SELECT row_number() over (ORDER BY player_name, position) AS Serial_Number, *
+FROM wc_players
