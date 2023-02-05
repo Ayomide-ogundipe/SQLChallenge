@@ -1,0 +1,6 @@
+SELECT wc.position, 
+CONCAT(
+MAX(DATE_PART('year', wc.player_dob)), '-', MIN(DATE_PART('year', wc.player_dob))) AS year_range,
+MAX(DATE_PART('year', wc.player_dob)) - MIN(DATE_PART('year', wc.player_dob)) AS age_range
+FROM wc_players AS wc
+GROUP BY wc.position
